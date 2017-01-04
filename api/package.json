@@ -1,6 +1,6 @@
 {
-    "name": "myapp",
-    "version": "0.0.3",
+    "name": "valemobi-api",
+    "version": "1.0.0",
     "private": true,
     "scripts": {
         "start": "nodemon ./bin/www"
@@ -21,6 +21,6 @@
     },
     "devDependencies": {
         "nodemon": "^1.11.0",
-        "faker":"latest"
+        "faker": "latest"
     }
 }
