@@ -1,0 +1,23 @@
+{
+    "port": 5000,
+    "security": {
+        "tokenLife": 3600
+    },
+    "mongoose": {
+        "uri": "mongodb://master:master@ds011715.mlab.com:11715/dbapp"
+    },
+    "default": {
+        "api": {
+            "version" : "v1"
+        },
+        "user": {
+            "username": "admin",
+            "password": "admin"
+        },
+        "client": {
+            "name": "Android API v1",
+            "clientId": "android",
+            "clientSecret": "k5TnN7siiukucQ83RXmq1XLK3BYSs6CWC0DbNQ7rF2KnCxHlUclYn1kkGh0xyLEjDMfBPW7SUoBAuhjjHVaNgOv0m3B6ghZVVuqIq5DOIfy3iYuxXCXcrIvMylQ9pVn0rASrvpUBH3qBFRag3In6aY"
+        }
+    }
+}
