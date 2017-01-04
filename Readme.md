@@ -13,6 +13,6 @@ This API REST was developed using:
 
     UTILS:
         - GIT
-        - BOWER and NPM
+        - NPM
 
 Browser Compatibility: https://www.polymer-project.org/1.0/docs/browsers
