@@ -14,5 +14,4 @@ This API REST was developed using:
         - GIT
         - BOWER and NPM
 
-
 Browser Compatibility: https://www.polymer-project.org/1.0/docs/browsers
