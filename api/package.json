@@ -1,5 +1,6 @@
 {
     "name": "valemobi-api",
+    "author": "Hebert Paziam",
     "version": "1.0.0",
     "private": true,
     "scripts": {
