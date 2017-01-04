@@ -1,20 +1,21 @@
 {
-    "name": "valemobi-api",
-    "description": "API developed to Valemobi's online test",
-    "main": "index.html",
-    "authors": [
-        "Hebert Pazian"
-    ],
-    "license": "MIT",
-    "homepage": "https://github.com/hebertpazian/valemobi-api",
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components",
-        "test",
-        "tests"
-    ],
-    "dependencies": {
-        "polymer": "Polymer/polymer#^1.7.1"
-    }
+  "name": "valemobi-api",
+  "description": "API developed to Valemobi's online test",
+  "main": "index.html",
+  "authors": [
+    "Hebert Pazian"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/hebertpazian/valemobi-api",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.7.1",
+    "paper-elements": "Polymer/paper-elements#^0.5.6"
+  }
 }
