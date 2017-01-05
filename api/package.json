@@ -2,7 +2,7 @@
     "name": "valemobi-api",
     "author": "Hebert Paziam",
     "version": "1.0.0",
-    "private": true,
+    "private": false,
     "scripts": {
         "start": "nodemon ./bin/www"
     },
@@ -23,5 +23,8 @@
     "devDependencies": {
         "nodemon": "^1.11.0",
         "faker": "latest"
+    },
+    "repository": {
+        "homepage": "https://github.com/hebertpazian/valemobi-api"
     }
 }

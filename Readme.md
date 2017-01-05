@@ -9,7 +9,7 @@ This API REST was developed using:
     
     BACK-END:
         - Node.js with Express.js framework and Passport.js to authentication (OAuth2)
-        - Mongoose.js to conection with MongoDB
+        - Mongoose.js to connection with MongoDB
 
     UTILS:
         - GIT

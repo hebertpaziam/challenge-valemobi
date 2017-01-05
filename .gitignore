@@ -6,3 +6,6 @@ node_modules/*
 bower_components/*
 typings/*
 npm-debug.log
+web/app/**/*.js
+web/app/**/*.map
+web/assets/**/*.css
