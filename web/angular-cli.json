@@ -16,8 +16,17 @@
         "tsconfig": "tsconfig.json",
         "prefix": "app",
         "mobile": false,
-        "styles": ["assets/css/main.css"],
-        "scripts": [],
+        "styles": [
+            "../node_modules/bootstrap/dist/css/bootstrap.css",
+            "assets/css/main.css"
+        ],
+        "scripts": [
+            "../node_modules/jquery/dist/jquery.min.js",
+            "../node_modules/tether/dist/js/tether.min.js",
+            "../node_modules/bootstrap/dist/js/bootstrap.min.js",
+            "../node_modules/moment/moment.js",
+            "../node_modules/moment/locale/pt-BR.js"
+        ],
         "environments": {
             "source": "environments/environment.ts",
             "dev": "environments/environment.ts",
