@@ -1,12 +1,21 @@
-<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse bg-faded" *ngIf="loggedUser">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#appNavbar" aria-controls="appNavbar" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-    <a class="navbar-brand" href="#">Valemobi API</a>
+    <a class="navbar-brand" href="javascript:;" routerLink="home"><img class="logo rounded" src="assets/images/valemobi-sm-logo.png" alt="Valemobi Logo"></a>
 
-    <div class="collapse navbar-collapse" id="appNavbar">
-        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" href="javascript:;" routerLink="/skates" ><i class="fa fa-list"></i> Skates</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" href="javascript:;" routerLink="/usuarios"><i class="fa fa-list"></i> Usuários</a>
+            </li>
         </ul>
+        <div class="my-2 my-lg-0">
+            <span class="navbar-text mr-3">{{loggedUser.name}}</span>
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="button" (click)="logout()"><i class="fa fa-sign-out"></i> Sair</button>
+        </div>
     </div>
 </nav>

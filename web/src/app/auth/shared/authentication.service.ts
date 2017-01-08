@@ -8,6 +8,7 @@ import { User } from './../../user/shared/user.model';
 export class AuthenticationService {
 
   public authenticatedUser: User;
+  public bearerToken: string;
 
   constructor(private router: Router) {
   }
@@ -16,9 +17,14 @@ export class AuthenticationService {
     localStorage.setItem('user', JSON.stringify(user));
     this.authenticatedUser = JSON.parse(localStorage.getItem('user')) as User;
 
-    this.router.navigate(['/home'])
+    this.router.navigate(['/skates'])
   }
+  
   doLogout() {
+      this.authenticatedUser = null;
+      this.bearerToken = null;
+      localStorage.removeItem('user');
 
+      this.router.navigate(['/autenticacao']);
   }
 }

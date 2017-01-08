@@ -1,3 +1,4 @@
+import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -12,24 +13,27 @@ import { AuthModule } from './auth/auth.module';
 const ROUTES: Routes = [
     {
         path: '',
-        loadChildren: 'app/auth/auth.module#AuthModule'
-    },
-    {
-        path: 'home',
         canActivateChild: [AuthGuardService],
-        component: AppComponent,
         children: [
             {
-                path: 'skate',
+                path: 'skates',
                 loadChildren: 'app/skate/skate.module#SkateModule',
                 canLoad: [AuthGuardService],
             },
             {
-                path: 'usuario',
+                path: 'usuarios',
                 loadChildren: 'app/user/user.module#UserModule',
                 canLoad: [AuthGuardService],
             }
         ]
+    },
+    {
+        path: 'autenticacao',
+        loadChildren: 'app/auth/auth.module#AuthModule'
+    },
+    {
+        path: '**',
+        component: NotFoundComponent
     }
 ];
 

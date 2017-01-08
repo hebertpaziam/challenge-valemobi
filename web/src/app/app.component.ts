@@ -9,12 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private authenticationService: AuthenticationService) {
-
+  constructor(private authenticationService: AuthenticationService, private router:Router) {
+    if (!localStorage.getItem('user')) {
+      this.router.navigate(['/autenticacao']);
+    }
   }
 
   ngOnInit() {
-    if (JSON.parse(localStorage.getItem('user'))) {
+    if (localStorage.getItem('user')) {
       let loggedUser = JSON.parse(localStorage.getItem('user')) as User;
       this.authenticationService.doLogin(loggedUser);
     }

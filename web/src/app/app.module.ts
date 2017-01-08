@@ -10,12 +10,14 @@ import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 
 import { AuthenticationService } from './auth/shared/authentication.service';
 import { AuthGuardService } from './auth/shared/auth-guard.service';
+import { NotFoundComponent } from './errors/not-found/not-found.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppNavbarComponent
+    AppNavbarComponent,
+    NotFoundComponent
   ],
   imports: [
     ROUTING,
