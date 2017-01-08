@@ -9,3 +9,4 @@ npm-debug.log
 web/app/**/*.js
 web/app/**/*.map
 web/assets/**/*.css
+web/src/app.old

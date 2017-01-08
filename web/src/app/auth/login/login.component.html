@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card card-block m-5">
+                <div class="text-center"><img src="assets/images/valemobi-logo.png" alt="Valemobi"></div>
+
+                <form #form="ngForm" (submit)="submitForm()">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon" id="username"><i class="fa fa-user"></i></span>
+                        <input type="text" class="form-control" placeholder="Usuario" aria-describedby="username" id="username" name="username" #username="ngModel" [(ngModel)]="user.username">
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon" id="password"><i class="fa fa-key"></i></span>
+                        <input type="password" class="form-control" placeholder="Senha" aria-describedby="password" id="password" name="password" #password="ngModel" [(ngModel)]="user.password">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-sign-in"></i> Entrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

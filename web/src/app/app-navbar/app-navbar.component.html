@@ -1,3 +1,12 @@
-<p>
-  app-navbar works!
-</p>
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse bg-faded" *ngIf="loggedUser">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#appNavbar" aria-controls="appNavbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <a class="navbar-brand" href="#">Valemobi API</a>
+
+    <div class="collapse navbar-collapse" id="appNavbar">
+        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+
+        </ul>
+    </div>
+</nav>
