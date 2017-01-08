@@ -1,0 +1,9 @@
+<h1>USUÁRIOS</h1>
+
+<p-dataTable [value]="users" [(selection)]="selectedUser">
+    <header>List of Users</header>
+    <p-column field="vin" header="Vin" [sortable]="true"></p-column>
+    <p-column field="year" header="Year" [sortable]="true"></p-column>
+    <p-column field="brand" header="Brand" [sortable]="true"></p-column>
+    <p-column field="color" header="Color" [sortable]="true"></p-column>
+</p-dataTable>

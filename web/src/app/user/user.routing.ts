@@ -1,6 +1,9 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { UserFormComponent } from './user-form/user-form.component';
+import { UserListComponent } from './user-list/user-list.component';
+
 import { UserComponent } from './user.component';
 
 const ROUTES: Routes = [{
@@ -8,7 +11,11 @@ const ROUTES: Routes = [{
     children: [
         {
             path: '',
-            component: UserComponent
+            component: UserListComponent
+        },
+        {
+            path: 'usuario/:id',
+            component: UserFormComponent
         }
     ]
 }];

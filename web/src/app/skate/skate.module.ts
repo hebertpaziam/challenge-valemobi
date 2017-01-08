@@ -8,6 +8,8 @@ import { skateRouting } from './skate.routing';
 import { SkateService } from './shared/skate.service';
 import { DataTableModule } from './../shared/primeng/datatable';
 import { SharedModule } from './../shared/primeng/shared';
+import { SkateListComponent } from './skate-list/skate-list.component';
+import { SkateFormComponent } from './skate-form/skate-form.component';
 
 @NgModule({
   imports: [
@@ -19,7 +21,9 @@ import { SharedModule } from './../shared/primeng/shared';
     skateRouting
   ],
   declarations: [
-    SkateComponent
+    SkateComponent,
+    SkateListComponent,
+    SkateFormComponent
   ],
   providers: [SkateService]
 })

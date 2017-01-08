@@ -6,6 +6,8 @@ import { HttpModule } from '@angular/http';
 import { UserComponent } from './user.component';
 import { userRouting } from './user.routing';
 import { UserService } from './shared/user.service';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserFormComponent } from './user-form/user-form.component';
 
 @NgModule({
   imports: [
@@ -15,7 +17,9 @@ import { UserService } from './shared/user.service';
     userRouting
   ],
   declarations: [
-    UserComponent
+    UserComponent,
+    UserListComponent,
+    UserFormComponent
   ],
   providers: [UserService]
 })
