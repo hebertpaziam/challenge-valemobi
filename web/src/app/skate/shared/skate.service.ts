@@ -8,7 +8,7 @@ import { Skate } from './skate.model';
 @Injectable()
 export class SkateService {
 
-    private options = { headers: new Headers({ 'Content-Type': 'application/json', 'Authorization': `Bearer ${this.authenticationService.bearerToken}`}), withCredentials: true };
+    private options = { headers: new Headers({ 'Content-Type': 'application/json', 'Authorization': `Bearer ${this.authenticationService.accessToken}`}), withCredentials: true };
     private appUrl = "http://localhost:5000"
 
     constructor(private http: Http, private authenticationService: AuthenticationService) {

@@ -8,8 +8,8 @@ import { User } from './user.model';
 @Injectable()
 export class UserService {
 
-    private options = { headers: new Headers({ 'Content-Type': 'application/json', 'Authorization': `Bearer ${this.authenticationService.bearerToken}`}), withCredentials: true };
-    private appUrl = "http://localhost:5000"
+    private options = { headers: new Headers({ 'Content-Type': 'application/json', 'Authorization': `Bearer ${this.authenticationService.accessToken}`}), withCredentials: true };
+    private appUrl = "http://localhost:5000/api"
 
     constructor(private http: Http, private authenticationService: AuthenticationService) {
     }
