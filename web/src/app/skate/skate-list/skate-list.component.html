@@ -5,7 +5,7 @@
     </h3>
     <hr>
 </div>
-<p-dataTable [value]="skates" [(selection)]="selectedSkate">
+<p-dataTable [value]="skates">
     <p-column field="code" header="Código" [sortable]="true"></p-column>
     <p-column field="name" header="Nome" [sortable]="true"></p-column>
     <p-column styleClass="col-button">
@@ -33,7 +33,7 @@
     </p-column>
 </p-dataTable>
 
-<!-- Modal -->
+<!-- descriptModal -->
 <div class="modal fade" id="descriptModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

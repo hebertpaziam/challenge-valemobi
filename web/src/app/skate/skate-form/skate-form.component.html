@@ -1,3 +1,110 @@
-<p>
-  skate-form works!
-</p>
+<div class="py-2 my-2">
+    <h3><i class="fa" [ngClass]="{ 'fa-pencil': hasId, 'fa-plus':!hasId }"></i> {{hasId ? "Edição de" : "Novo"}} Skate</h3>
+    <hr>
+</div>
+<form #form="ngForm">
+    <div class="form-group">
+        <label for="skateCode">Código (<span class="text-danger">*</span>): </label>
+        <input type="text" required class="form-control" id="skateCode" name="skateCode" #skateCode [(ngModel)]="skate.code" placeholder="Código do skate">
+    </div>
+    <div class="form-group">
+        <label for="skateName">Nome (<span class="text-danger">*</span>): </label>
+        <input type="text" required class="form-control" id="skateName" name="skateName" #skateName [(ngModel)]="skate.name" placeholder="Nome do skate">
+    </div>
+    <div class="form-group">
+        <label for="skateDescription">Descrição: </label>
+        <textarea class="form-control" id="skateDescription" name="skateDescription" #skateDescription [(ngModel)]="skate.description" rows="3" placeholder="Descrição completa do skate"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="skateAmount">Quantidade (<span class="text-danger">*</span>): </label>
+        <input type="number" required class="form-control" id="skateAmount" name="skateAmount" #skateAmount [(ngModel)]="skate.amount" placeholder="Quantidade de skates em estoque">
+    </div>
+    <div class="form-group">
+        <label for="skatePrice">Preço (<span class="text-danger">*</span>): </label>
+        <input type="text" required class="form-control" id="skatePrice" name="skatePrice" #skatePrice [(ngModel)]="skate.price" placeholder="Valor unitário">
+    </div>
+
+    <hr>
+    <div class="form-group bg-danger px-1" style="color:#FFF;">
+        Todos os campos terminados em "(*)" são obrigatórios
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary-valemobi" type="submit" [disabled]="form.invalid || (hasId && !form.dirty)"><i class="fa fa-save"></i> {{hasId ? "Alterar" : "Salvar"}}</button>
+        <button class="btn btn-secondary" type="button" [disabled]="!form.dirty" data-toggle="modal" data-target="#resetModal"><i class="fa fa-rotate-left"></i> Resetar</button>
+        <button class="btn btn-secondary" type="button" data-toggle="modal" data-target="#goBackModal"><i class="fa fa-arrow-left"></i> Voltar</button>
+    </div>
+</form>
+
+<!-- goBackModal -->
+<div class="modal fade" id="goBackModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modelTitleId">Deseja deixar a página?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                Você perderá as alterações feitas no formulário.<br>Clique em continuar para deixar a página.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" data-dismiss="modal" (click)="goBack()"><i class="fa fa-arrow-left"></i> Voltar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- resetModal -->
+<div class="modal fade" id="resetModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modelTitleId">Deseja resetar o formulario?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                Você perderá as alterações recentes.<br>Clique em continuar para resetar o formulario.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="resetForm()"><i class="fa fa-arrow-left"></i> Resetar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- successModal -->
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modelTitleId">Salvo com Sucesso!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                O registro foi salvo com Sucesso.<br>Clique em continuar para voltar à listagem.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="redirectToList()">Continuar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- errorModal -->
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modelTitleId">Ocorreu um Erro!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                Houve um Erro ao tentar salvar as informações.<br>Clique em continuar para voltar ao formulario.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>

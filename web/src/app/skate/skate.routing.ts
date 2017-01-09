@@ -18,12 +18,12 @@ const ROUTES: Routes = [{
             canLoad: [AuthGuardService],
         },
         {
-            path: '/novo',
+            path: 'novo',
             component: SkateFormComponent,
             canLoad: [AuthGuardService],
         },
         {
-            path: '/editar/:id',
+            path: 'editar/:id',
             component: SkateFormComponent,
             canLoad: [AuthGuardService],
         }
