@@ -1,9 +1,8 @@
 export class User {
-
     id: number;
     name:string;
     username: string;
-    hashedPassword: string;
+    password: string;
     salt: string;
     created: Date;
 }

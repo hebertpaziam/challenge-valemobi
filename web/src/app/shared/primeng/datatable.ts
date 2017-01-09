@@ -375,13 +375,13 @@ export class DataTable implements AfterViewChecked, AfterViewInit, AfterContentI
 
     @Input() pageLinks: number = 5;
 
-    @Input() rowsPerPageOptions: number[] = [5,10,20];
+    @Input() rowsPerPageOptions: number[];
 
     @Input() responsive: boolean = true;
 
     @Input() stacked: boolean;
 
-    @Input() selectionMode: string = "single";
+    @Input() selectionMode: string;
 
     @Input() selection: any;
 
@@ -413,7 +413,7 @@ export class DataTable implements AfterViewChecked, AfterViewInit, AfterContentI
 
     @Output() onColResize: EventEmitter<any> = new EventEmitter();
 
-    @Input() reorderableColumns: boolean;
+    @Input() reorderableColumns: boolean = true;
 
     @Output() onColReorder: EventEmitter<any> = new EventEmitter();
 

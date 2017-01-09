@@ -1,9 +1,22 @@
-<h1>USUÁRIOS</h1>
-
+<div class="py-2 my-2">
+    <h3>
+        <i class="fa fa-list-alt"></i> Lista de Usuários
+        <button type="button" class="btn btn-primary-valemobi pull-right" (click)="newUser()"><i class="fa fa-plus"></i> Novo</button>
+    </h3>
+    <hr>
+</div>
 <p-dataTable [value]="users" [(selection)]="selectedUser">
-    <header>List of Users</header>
-    <p-column field="vin" header="Vin" [sortable]="true"></p-column>
-    <p-column field="year" header="Year" [sortable]="true"></p-column>
-    <p-column field="brand" header="Brand" [sortable]="true"></p-column>
-    <p-column field="color" header="Color" [sortable]="true"></p-column>
+    <p-column field="name" header="Nome" [sortable]="true"></p-column>
+    <p-column field="username" header="Usuário" [sortable]="true"></p-column>
+    <p-column styleClass="col-button">
+        <template pTemplate="header">
+            <span>Ações</span>
+        </template>
+        <template let-user="rowData" pTemplate="body">
+            <div class="text-center">
+                <button pButton type="button" class="btn btn-secondary btn-sm mx-1" (click)="editUser(user)"><i class="fa fa-pencil"></i></button>
+                <button pButton type="button" class="btn btn-secondary btn-sm mx-1" (click)="removeUser(user)"><i class="fa fa-times"></i></button>
+            </div>
+        </template>
+    </p-column>
 </p-dataTable>

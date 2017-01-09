@@ -1,5 +1,22 @@
-.logo{
-    width:100%;
+.logo {
+    width: 100%;
     height: auto;
     max-width: 35px;
+}
+
+/////// NAVBAR ////
+li.nav-item.active {
+    background-color: #484848;
+    border-radius: 3px;
+}
+
+/////// BUTTONS ////
+.btn {
+    cursor: pointer;
+}
+
+.btn-primary-valemobi {
+    color: #FFFFFF;
+    background-color: #F58634;
+    border-color: #F58634;
 }

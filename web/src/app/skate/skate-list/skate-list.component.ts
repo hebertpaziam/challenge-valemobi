@@ -1,4 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { Skate } from './../shared/skate.model';
+import { SkateService } from './../shared/skate.service';
 
 @Component({
   selector: 'app-skate-list',
@@ -7,30 +11,49 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SkateListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private skateService: SkateService) { }
 
-  private skates: Array<any> = [];
-  private _selectedSkate:any;
+  private skates: Array<Skate> = [];
+  private _selectedSkate: Skate = new Skate();
 
-   @Input()
-    set selectedSkate(value: any) {
-        this._selectedSkate = Object.assign({}, value);
-    }
+  @Input()
+  set selectedSkate(value: Skate) {
+    this._selectedSkate = Object.assign({}, value);
+  }
 
-    get selectedSkate(): any {
-        return this._selectedSkate;
-    }
+  get selectedSkate(): Skate {
+    return this._selectedSkate;
+  }
 
   ngOnInit() {
 
     for (let i = 0; i < 50; i++) {
       this.skates.push({
-        vin:`test${i}`,
-        year:`${1990+i}`,
-        brand:`test${i}`,
-        color:`test${i}`,
+        id: i,
+        code: `test${i}`,
+        name: `${1990 + i}`,
+        description: `test${i}`,
+        amount: i * 5,
+        price: i * 20
       });
     }
+    
   }
-  
+
+  newSkate() {
+    this.router.navigate([`/skates/novo`])
+  }
+
+  viewDescript(skate: Skate) {
+    this.selectedSkate = skate;
+  }
+
+  editSkate(skate: Skate) {
+    this.router.navigate([`/skates/editar/${skate.id}`]);
+  }
+
+  removeSkate(skate: Skate) {
+    this.skateService;
+  }
+
 }
