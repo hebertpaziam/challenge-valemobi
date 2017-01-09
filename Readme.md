@@ -3,7 +3,7 @@
 This API REST was developed using:
     
     FRONT-END:
-        - Polymer (Webcomponents)
+        - Bootstrap 4
         - Angular 2 (Typescript)
         - Sass
     
@@ -13,6 +13,6 @@ This API REST was developed using:
 
     UTILS:
         - GIT
-        - NPM and BOWER
+        - NPM
 
 Browser Compatibility: https://www.polymer-project.org/1.0/docs/browsers
