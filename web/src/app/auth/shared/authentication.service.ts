@@ -14,6 +14,9 @@ export class AuthenticationService {
   }
 
   doLogin(user: User) {
+
+    if (user.username == "admin") user.name = "Administrador";
+    
     localStorage.setItem('user', JSON.stringify(user));
     this.authenticatedUser = JSON.parse(localStorage.getItem('user')) as User;
 

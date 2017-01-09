@@ -26,6 +26,10 @@ export class SkateListComponent implements OnInit {
     }
 
     ngOnInit() {
+        /*this.skateService.getSkates().then(skateList => {
+            
+        });*/
+
         for (let i = 0; i < 50; i++) {
             this.skates.push({
                 id: i,
@@ -36,10 +40,6 @@ export class SkateListComponent implements OnInit {
                 price: i * 20
             });
         }
-
-        /*this.skateService.getSkates().then(skateList => {
-            console.log(skateList);
-        });*/
 
     }
 

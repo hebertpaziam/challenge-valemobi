@@ -11,13 +11,15 @@ import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 import { AuthenticationService } from './auth/shared/authentication.service';
 import { AuthGuardService } from './auth/shared/auth-guard.service';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AppNavbarComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    HomeComponent
   ],
   imports: [
     ROUTING,

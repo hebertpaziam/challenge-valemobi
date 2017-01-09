@@ -15,8 +15,8 @@ export class LoginComponent implements OnInit {
   private loggedUser: User = new User();
 
   constructor(private authenticationService: AuthenticationService, private router: Router) {
-    if (JSON.parse(localStorage.getItem('user'))){
-      this.loggedUser = JSON.parse(localStorage.getItem('user'));
+    if (JSON.parse(localStorage.getItem('user'))) {
+      this.loggedUser = JSON.parse(localStorage.getItem('user')) as User;
       this.authenticationService.doLogin(this.loggedUser);
     }
   }

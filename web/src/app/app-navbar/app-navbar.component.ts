@@ -10,17 +10,17 @@ import { User } from './../user/shared/user.model';
 })
 export class AppNavbarComponent implements OnInit {
 
-  private loggedUser: User = new User();
+  private loggedUser: User;
 
   constructor(private authenticationService: AuthenticationService) {
-    //this.loggedUser = this.authenticationService.authenticatedUser;
-    this.loggedUser.name = "Administrador"
+
   }
 
   ngOnInit() {
+    this.loggedUser = this.authenticationService.authenticatedUser;
   }
 
-  logout(){
+  logout() {
     this.authenticationService.doLogout();
   }
 

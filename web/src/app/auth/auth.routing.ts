@@ -7,16 +7,8 @@ import { LoginComponent } from './login/login.component';
 const ROUTES: Routes = [
     {
         path: '',
-        children: [
-            {
-                path: '',
-                redirectTo: 'login'
-            },
-            {
-                path: 'login',
-                component: LoginComponent
-            }
-        ]
-    }];
+        component: LoginComponent
+    }
+];
 
 export const authRouting: ModuleWithProviders = RouterModule.forChild(ROUTES);

@@ -2,7 +2,7 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
 import { SkateModule } from './skate/skate.module';
 
 import { AuthenticationService } from './auth/shared/authentication.service';
@@ -13,6 +13,7 @@ import { AuthModule } from './auth/auth.module';
 const ROUTES: Routes = [
     {
         path: '',
+        component: HomeComponent,
         canActivateChild: [AuthGuardService],
         children: [
             {

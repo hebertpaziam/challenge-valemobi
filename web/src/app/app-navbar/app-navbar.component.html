@@ -1,4 +1,4 @@
-<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse bg-faded">
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse bg-faded" *ngIf="authenticationService.authenticatedUser">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,14 +7,14 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" href="javascript:;" routerLink="/skates" ><i class="fa fa-list"></i> Skates</a>
+                <a class="nav-link" href="javascript:;" routerLink="/skates"><i class="fa fa-list"></i> Skates</a>
             </li>
             <li class="nav-item" routerLinkActive="active">
                 <a class="nav-link" href="javascript:;" routerLink="/usuarios"><i class="fa fa-list"></i> Usuários</a>
             </li>
         </ul>
         <div class="my-2 my-lg-0">
-            <span class="navbar-text mr-3">{{loggedUser.name}}</span>
+            <span class="navbar-text mr-3">{{authenticationService.authenticatedUser.name}}</span>
             <button class="btn btn-outline-secondary my-2 my-sm-0" type="button" (click)="logout()"><i class="fa fa-sign-out"></i> Sair</button>
         </div>
     </div>

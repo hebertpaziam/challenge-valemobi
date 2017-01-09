@@ -20,6 +20,18 @@ app.use(cookieParser());
 app.use(methodOverride());
 app.use(passport.initialize());
 
+app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Credentials', true);
+    res.header('Access-Control-Allow-Origin', req.headers.origin);
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Authorization, Accept');
+    if ('OPTIONS' == req.method) {
+        res.send(200);
+    } else {
+        next();
+    }
+});
+
 app.use('/', apiRoutes);
 app.use('/api', apiRoutes);
 app.use('/api/users', userRoutes);
