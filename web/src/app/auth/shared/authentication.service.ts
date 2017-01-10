@@ -30,16 +30,16 @@ export class AuthenticationService {
 		return this.http.post(`${this.appUrl}/auth`, body, this.options)
 			.toPromise()
 			.then(res => {
-				
+
 
 				this.accessToken = this.extractData(res).access_token;
 
 				if (user.username == "admin") user.name = "Administrador";
 
-				localStorage.setItem('user', JSON.stringify(user));
-				this.authenticatedUser = JSON.parse(localStorage.getItem('user')) as User;
+				this.authenticatedUser = user;
 
-
+				localStorage.setItem('user', JSON.stringify(this.authenticatedUser));
+				localStorage.setItem('access_token', JSON.stringify(this.accessToken));
 			})
 			.catch(this.handleError);
 	}
