@@ -22,8 +22,8 @@ export class AuthenticationService {
 	doLogin(user: User): Promise<void> {
 		let body = {
 			grant_type: "password",
-			client_id: this.generateClientId(),
-			client_secret: this.generateClientSecret(),
+			client_id: this.getClientId(),
+			client_secret: this.getClientSecret(),
 			username: user.username,
 			password: user.password
 		}
@@ -55,11 +55,11 @@ export class AuthenticationService {
 
 	///////////////////////////////////////////////     UTILS     //////////////////////////////////////////////////////////////////////
 
-	private generateClientId(): string {
-		return "android"
+	private getClientId(): string {
+		return "57AE926889924FD233B50F7768069215E3DE3DE34F5DC69E10701097B9B1E99214ABDE87CA45C183965F71C59FB09D9CB9A8BE1DC0C1A2FA4AB767F2BD38540C"
 	}
-	private generateClientSecret(): string {
-		return "k5TnN7siiukucQ83RXmq1XLK3BYSs6CWC0DbNQ7rF2KnCxHlUclYn1kkGh0xyLEjDMfBPW7SUoBAuhjjHVaNgOv0m3B6ghZVVuqIq5DOIfy3iYuxXCXcrIvMylQ9pVn0rASrvpUBH3qBFRag3In6aY";
+	private getClientSecret(): string {
+		return "913D7CF00C793989DDD2C748402B876D9A0ED509A7C307B306FA67B916595F5C439190E68FE4E857CD7B29DB1EFD6C7B22F16378329434BEB5AF41DD02218214875C4B9DE1998F83D3F63E0259ABC39B40B398E87F0F27115D11D793C98A735B143E537D92BD7D83B25E14E58984E568F4636A4A1C12C87903E6A341D69D0812";
 	}
 
 	private extractData(res: Response) {
