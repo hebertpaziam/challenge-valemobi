@@ -16,16 +16,30 @@ exports.getList = function(req, res) {
 }
 
 exports.insert = function(req, res) {
-    var user = new User();
-    user.username = req.body.username;
-    user.password = req.body.password;
+    req.checkBody('username', 'Usuário inválido').notEmpty().len(3, 40)
+    req.checkBody('password', 'Senha inválida').notEmpty().len(6, 50)
 
-    user.save(function(err) {
-        if (err) res.send(err);
-        res.json({ message: 'Usuário cadastrado com sucesso!' });
-    });
+    res.setHeader('Content-Type', 'application/json')
+    var errors = req.validationErrors();
+    if (errors) {
+        res.send(errors, 400)
+    } else {
+        var user = new User();
+        user.username = req.body.username;
+        user.password = req.body.password;
+
+        User.findOne({ username: username }, function(err, user) {
+            if (user) {
+                res.send("Usuário ja está cadastrado", 422)
+            } else {
+                user.save(function(err) {
+                    if (err) res.send(err);
+                    res.json({ message: 'Usuário cadastrado com sucesso!' });
+                });
+            }
+        });
+    }
 }
-
 exports.update = function(req, res) {
     User.findById(req.params.id, function(err, user) {
         if (err) res.send(err);

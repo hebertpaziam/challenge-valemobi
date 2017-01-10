@@ -9,21 +9,11 @@ router.use(function (req, res, next) { next(); });
 
 router.route('/')
     .get(passport.authenticate('bearer', { session: false }), UserController.getList)
-    .post(passport.authenticate('bearer', { session: false }), UserController.getList)
+    .post(passport.authenticate('bearer', { session: false }), UserController.insert)
 
 router.route('/:id')
     .get(passport.authenticate('bearer', { session: false }), UserController.getById)
     .put(passport.authenticate('bearer', { session: false }), UserController.update)
     .delete(passport.authenticate('bearer', { session: false }), UserController.delete)
-
-router.get('/info', passport.authenticate('bearer', { session: false }),
-    function (req, res) {
-        res.json({
-            user_id: req.user.userId,
-            name: req.user.username,
-            scope: req.authInfo.scope
-        });
-    }
-);
 
 module.exports = router;
